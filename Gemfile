@@ -5,6 +5,11 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.8'
 # Use sqlite3 as the database for Active Record
 
+group :development do
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+end
+
 group :development, :test do
   gem 'sqlite3'
 end
@@ -13,6 +18,10 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+
+# ------
+# ASSETS
+# ------
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -26,18 +35,32 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
-
-# Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+
+# ----------
+# TEMPLATING
+# ----------
+
+# Slim is a nicer templating language for Ruby projects than ERB that
+# renders nearly as fast
+gem 'slim-rails'
+# Use jquery as the JavaScript library
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
+
+# -------------
+# DOCUMENTATION
+# -------------
+
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+# ----
+# APIS
+# ----
+
 gem 'cat_api', '~> 0.1.0'
 
 # Use ActiveModel has_secure_password

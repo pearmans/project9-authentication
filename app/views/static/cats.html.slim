@@ -1,0 +1,10 @@
+form
+  label How many cats do you need?
+  input type="number" name="number_of_cats" value="#{params[:number_of_cats]}" placeholder="# of Cats"
+  button type="submit" Go!
+
+ul.cat-list
+  - @cats.each do |cat|
+    li.col-md-4.col-xs-6
+      a href="#{cat.source_url}" target="blank"
+        img src="#{cat.url}" alt="cat picture"
