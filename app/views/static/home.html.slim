@@ -1,4 +1,4 @@
 p.banner-quote
   | This is a place where cat pictures are. Looking at cats is great medicine, do it for your health!
   br
-  | Today is <strong>#{current_date_and_time}.</strong> Look at <strong>#{Time.now.day}</strong> cats today.
+  | Today is <strong>#{current_date_and_time}.</strong> Look at <strong>#{pluralize Time.now.day, 'cat'}</strong> today.
