@@ -4,6 +4,8 @@
     => number_field_tag :number_of_cats, nil, placeholder: "# of Cats", class: 'form-control'
     = button_tag 'Go!', type: :submit, class: 'btn btn-primary'
 
-= responsive_grid @cats, md: 3, xs: 2 do |cat|
-  = link_to cat.source_url, target: :blank do
-    = image_tag cat.url, alt: 'cat picture', class: 'img-responsive img-thumbnail img-cat'
+#freewall
+  .freewall-loading.glyphicon.glyphicon-loading
+  - @cats.each do |cat|
+    = link_to cat.source_url, target: :blank, class: 'brick' do
+      = image_tag cat.url, alt: 'cat picture', class: 'img-thumbnail'

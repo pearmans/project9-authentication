@@ -1,9 +1,7 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
-// A special glob syntax we can use in Rails that imports all the
-// files in the current folder (including inside sub-folders).
-// See more at: https://github.com/rails/sass-rails#glob-imports
-@import 'bootstrap/extensions/**/*';
+@import 'bootstrap/extensions/glyphicon_loading.scss';
+@import 'bootstrap/extensions/responsive_grid.scss';
 
-@import 'lib/**/*';
+@import 'lib/static.scss';
