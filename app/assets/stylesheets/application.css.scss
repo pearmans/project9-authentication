@@ -4,4 +4,6 @@
 // A special glob syntax we can use in Rails that imports all the
 // files in the current folder (including inside sub-folders).
 // See more at: https://github.com/rails/sass-rails#glob-imports
-@import '**/*';
+@import 'bootstrap/extensions/**/*';
+
+@import 'lib/**/*';

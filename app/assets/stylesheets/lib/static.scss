@@ -38,19 +38,4 @@ nav {
   line-height: 1.7em;
 }
 
-form {
-  background: #eee;
-  padding: 12px;
-  margin-bottom: 20px;
-}
-
-.cat-list {
-  li {
-    margin-top: 10px;
-    display: inline-block
-  }
-
-  img {
-    width: 100%;
-  }
-}
+form { @extend .well }

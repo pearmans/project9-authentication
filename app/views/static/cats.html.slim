@@ -1,10 +1,9 @@
-= form_tag cats_path, method: :get do
-  = label_tag :number_of_cats, 'How many cats do you need?'
-  = number_field_tag :number_of_cats, nil, placeholder: "# of Cats"
-  = button_tag 'Go!', type: :submit
+= form_tag cats_path, method: :get, class: 'form-inline' do
+  .form-group
+    => label_tag :number_of_cats, 'How many cats do you need?'
+    => number_field_tag :number_of_cats, nil, placeholder: "# of Cats", class: 'form-control'
+    = button_tag 'Go!', type: :submit, class: 'btn btn-primary'
 
-ul.cat-list
-  - @cats.each do |cat|
-    li.col-md-4.col-xs-6
-      = link_to cat.source_url, target: :blank do
-        = image_tag cat.url, alt: 'cat picture'
+= responsive_grid @cats, md: 3, xs: 2 do |cat|
+  = link_to cat.source_url, target: :blank do
+    = image_tag cat.url, alt: 'cat picture', class: 'img-responsive img-thumbnail img-cat'
