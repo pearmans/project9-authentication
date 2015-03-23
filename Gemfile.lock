@@ -140,7 +140,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  autoprefixer-rails
   bootstrap-sass (~> 3.3.4)
   cat_api (~> 0.1.0)
   coffee-rails (~> 4.0.0)
