@@ -1,0 +1,11 @@
+= form_tag cats_path, method: :get, class: 'form-inline' do
+  .form-group
+    => label_tag :number_of_cats, 'How many cats do you need?'
+    => number_field_tag :number_of_cats, nil, placeholder: "# of Cats", class: 'form-control'
+    = button_tag 'Go!', type: :submit, class: 'btn btn-primary'
+
+#freewall
+  .freewall-loading.glyphicon.glyphicon-loading
+  - @cats.each do |cat|
+    = link_to cat.source_url, target: :blank, class: 'brick' do
+      = image_tag cat.url, alt: 'cat picture', class: 'img-thumbnail'
