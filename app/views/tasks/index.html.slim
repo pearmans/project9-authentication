@@ -1,0 +1,35 @@
+h1 Listing tasks
+
+table
+  thead
+    tr
+      th Name
+      th Time
+      th Duration
+      th Category
+      th Subtasks
+      th Notes
+      th Recurring
+      th Days
+      th
+      th
+      th
+
+  tbody
+    - @tasks.each do |task|
+      tr
+        td = task.name
+        td = task.time
+        td = task.duration
+        td = task.category
+        td = task.subtasks
+        td = task.notes
+        td = task.recurring
+        td = task.days
+        td = link_to 'Show', task
+        td = link_to 'Edit', edit_task_path(task)
+        td = link_to 'Destroy', task, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Task', new_task_path

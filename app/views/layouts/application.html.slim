@@ -11,12 +11,13 @@ html
   body
 
     header.container
-      h1 Look at Cats
+      h1 Look at Cats/Stay on Task
       nav
         ul
           li= link_to 'Home', root_path
           li= link_to 'About', about_path
           li= link_to 'Cats', cats_path
+          li= link_to 'Schedule', tasks_path
 
     .container
       = yield

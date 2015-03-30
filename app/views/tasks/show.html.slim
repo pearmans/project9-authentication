@@ -1,0 +1,30 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @task.name
+p
+  strong Time:
+  = @task.time
+p
+  strong Duration:
+  = @task.duration
+p
+  strong Category:
+  = @task.category
+p
+  strong Subtasks:
+  = @task.subtasks
+p
+  strong Notes:
+  = @task.notes
+p
+  strong Recurring:
+  = @task.recurring
+p
+  strong Days:
+  = @task.days
+
+= link_to 'Edit', edit_task_path(@task)
+'|
+= link_to 'Back', tasks_path
