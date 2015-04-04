@@ -18,7 +18,6 @@
           span.glyphicon.glyphicon-time
     javascript:
       $('.clockpicker').clockpicker();
-
   .field.col-md-4.split-time
     = f.label :duration
     = number_field_tag :hours, value = (time_hours @task.duration), min: 0

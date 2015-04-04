@@ -74,10 +74,6 @@ class TasksController < ApplicationController
     end
 
     def time_update
-      # @newtime = params[:minute]
-      # @task.time = @newtime
       params[:task][:duration] = params[:hours].to_i * 60 + params[:minutes].to_i
-
-      # binding.pry
     end
 end
