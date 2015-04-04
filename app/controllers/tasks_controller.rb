@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :time_update, only: [:update]
 
   # GET /tasks
   # GET /tasks.json
@@ -70,5 +71,13 @@ class TasksController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
       params.require(:task).permit(:name, :time, :duration, :category, :subtasks, :notes, :recurring, :days)
+    end
+
+    def time_update
+      # @newtime = params[:minute]
+      # @task.time = @newtime
+      params[:task][:duration] = params[:hours].to_i * 60 + params[:minutes].to_i
+
+      # binding.pry
     end
 end

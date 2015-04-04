@@ -46,3 +46,68 @@ form { @extend .well }
   text-align: center;
   font-size: 200px;
 }
+
+.field {
+  margin: 10px 0;
+  font-size: 1.2em;
+
+  label {
+    margin-right: 6px;
+    font-weight: normal;
+    vertical-align: middle;
+  }
+
+  input, textarea {
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    padding: 2px 4px;
+  }
+
+  &.heading {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  &.split-time {
+    input {
+      width: 50px;
+    }
+  }
+
+  .clockpicker {
+    .form-group {
+      max-width: 120px;
+      display: inline-block
+    }
+    input {
+      width: 80px;
+      font-size: 1.0em;
+    }
+    label {
+      position: relative;
+      top: 4px;
+      float: left;
+    }
+    span {
+      padding:4px 5px 5px 5px;
+    }
+  }
+}
+
+tr {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-right: 0;
+  border-left: 0;
+}
+
+thead tr {
+  border-color: #fff;
+  background: #fff;
+}
+
+td, th {
+  padding: 8px;
+}
+
+

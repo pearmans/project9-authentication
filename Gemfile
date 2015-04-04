@@ -8,16 +8,14 @@ gem 'rails', '4.1.8'
 group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'pry-rails'
 end
 
-group :development, :test do
-  gem 'sqlite3'
-end
 
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
+gem 'pg'
+gem 'rails_12factor'
 
 # ------
 # ASSETS
@@ -29,6 +27,7 @@ gem 'sass-rails', '~> 4.0.3'
 # as it's officially maintained by the Bootstrap team and integrates
 # really easily into Rails.
 gem 'bootstrap-sass', '~> 3.3.4'
+gem 'clockpicker-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -49,6 +48,8 @@ gem 'slim-rails'
 # Use jquery as the JavaScript library
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
+
+gem 'stamp'
 
 # -------------
 # DOCUMENTATION

@@ -5,10 +5,12 @@ p
   = @task.name
 p
   strong Time:
-  = @task.time
+  = @task.time.try(:stamp,'2:00 pm')
 p
-  strong Duration:
-  = @task.duration
+  strong Duration: 
+  = time_hours @task.duration
+  |:
+  = time_minutes @task.duration
 p
   strong Category:
   = @task.category

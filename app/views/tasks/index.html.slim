@@ -19,8 +19,11 @@ table
     - @tasks.each do |task|
       tr
         td = task.name
-        td = task.time
-        td = task.duration
+        td = task.time.try(:stamp, '9:20 am')
+        td
+          = time_hours task.duration
+          | :
+          = time_minutes task.duration
         td = task.category
         td = task.subtasks
         td = task.notes

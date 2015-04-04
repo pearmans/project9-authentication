@@ -13,12 +13,15 @@
 
 ActiveRecord::Schema.define(version: 20150327161051) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "tasks", force: true do |t|
     t.text     "name"
     t.time     "time"
     t.decimal  "duration"
     t.string   "category"
-    t.string   "subtasks"
+    t.text     "subtasks"
     t.text     "notes"
     t.boolean  "recurring"
     t.date     "days"

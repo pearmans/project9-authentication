@@ -6,29 +6,38 @@
         - @task.errors.full_messages.each do |message|
           li = message
 
-  .field
+  .field.col-md-12.heading
     = f.label :name
-    = f.text_area :name
-  .field
-    = f.label :time
-    = f.time_select :time
-  .field
+    = f.text_field :name
+  .field.col-md-4
+    .input-group.clockpicker data-autoclose="true"
+      = f.label :time
+      .form-group
+        = f.text_field :time, class: "form-control"
+        span.input-group-addon
+          span.glyphicon.glyphicon-time
+    javascript:
+      $('.clockpicker').clockpicker();
+
+  .field.col-md-4.split-time
     = f.label :duration
-    = f.number_field :duration
-    p hours
-  .field
+    = number_field_tag :hours, value = (time_hours @task.duration), min: 0
+    '  :
+    = number_field_tag :minutes, value = (time_minutes @task.duration), min: 0, max: 59, step: 5
+  .field.col-md-4
     = f.label :category
     = f.text_field :category
-  .field
+  .field.col-md-4
     = f.label :subtasks
     = f.text_area :subtasks
-  .field
+  .field.col-md-4
     = f.label :notes
     = f.text_area :notes
-  .field
+  .field.col-md-4
     = f.label :recurring
     = f.check_box :recurring
-  .field
+  .field.col-md-4
     = f.label :days
     = f.date_field :days
-  .actions = f.submit
+  .actions.col-md-4 = f.submit
+  .clearfix

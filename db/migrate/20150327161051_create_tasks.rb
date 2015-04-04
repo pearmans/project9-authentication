@@ -5,10 +5,10 @@ class CreateTasks < ActiveRecord::Migration
       t.time :time
       t.decimal :duration
       t.string :category
-      t.text :subtasks, :array => true
+      t.text :subtasks
       t.text :notes
       t.boolean :recurring
-      t.date :days, :array => true
+      t.date :days
 
       t.timestamps
     end
