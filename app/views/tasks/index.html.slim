@@ -30,9 +30,11 @@ table
         td = task.recurring
         td = task.days
         td = link_to 'Show', task
-        td = link_to 'Edit', edit_task_path(task)
-        td = link_to 'Destroy', task, data: {:confirm => 'Are you sure?'}, :method => :delete
+        - if user_signed_in?
+          td = link_to 'Edit', edit_task_path(task)
+          td = link_to 'Destroy', task, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
 
-= link_to 'New Task', new_task_path
+- if user_signed_in?
+  =link_to '+ New Task', new_task_path

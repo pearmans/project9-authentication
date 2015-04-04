@@ -9,15 +9,24 @@ html
     = csrf_meta_tags
 
   body
+    - flash.each do |type, message|
+      div class="flash #{type}"
+        p = message
 
     header.container
-      h1 Look at Cats/Stay on Task
       nav
         ul
-          li= link_to 'Home', root_path
+          li
+            = link_to root_path do
+              h1 Tasks n Cats
           li= link_to 'About', about_path
           li= link_to 'Cats', cats_path
           li= link_to 'Schedule', tasks_path
+          - if user_signed_in?
+            li.greeting Hello = current_user.email
+            li.pull-right= link_to "Sign Out", sign_out_path, method: :delete
+          - else
+            li.pull-right= link_to "Sign In", sign_in_path
 
     .container
       = yield

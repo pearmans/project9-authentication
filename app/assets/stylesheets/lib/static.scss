@@ -2,16 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//----Base Styles----//
+
 html, body {
   color: #555555;
 }
 
-h1, h2, h3 {
-  color: #333333;
-}
+.flash {
+  padding: 10px 25px;
+  background: #eef6f6;
+  border-bottom: 1px solid #ddd;
+  color: #6d6d6d;
 
-p {
-  font-size: 1.3em;
+  p {
+    margin: 0;
+  }
 }
 
 header {
@@ -23,20 +28,60 @@ header {
 }
 
 nav {
-  display: inline-block;
+  ul {
+    padding-left: 0;
+    height: 30px;
+  }
 
   li {
+    height: 30px;
     display: inline-block;
     padding: 0 12px;
     font-size: 1.5em;
+    vertical-align: middle;
+
+    h1 {
+      position: relative;
+      font-size: 35px;
+      bottom: 9px;
+      margin-top: 0;
+    }
   }
 }
+
+h1, h2, h3 {
+  color: #333333;
+}
+
+p {
+  font-size: 1.3em;
+}
+
+tr {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-right: 0;
+  border-left: 0;
+}
+
+thead tr {
+  border-color: #fff;
+  background: #fff;
+}
+
+td, th {
+  padding: 8px;
+}
+
+//----Homepage----//
 
 .banner-quote {
   margin-top: 100px;
   text-align: center;
   line-height: 1.7em;
 }
+
+//----Cats----//
 
 form { @extend .well }
 
@@ -46,6 +91,8 @@ form { @extend .well }
   text-align: center;
   font-size: 200px;
 }
+
+//----Task Pages----//
 
 .field {
   margin: 10px 0;
@@ -92,22 +139,6 @@ form { @extend .well }
       padding:4px 5px 5px 5px;
     }
   }
-}
-
-tr {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-right: 0;
-  border-left: 0;
-}
-
-thead tr {
-  border-color: #fff;
-  background: #fff;
-}
-
-td, th {
-  padding: 8px;
 }
 
 

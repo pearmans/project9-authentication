@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   before_action :time_update, only: [:update]
-
+  
   # GET /tasks
   # GET /tasks.json
   def index
@@ -76,4 +76,12 @@ class TasksController < ApplicationController
     def time_update
       params[:task][:duration] = params[:hours].to_i * 60 + params[:minutes].to_i
     end
+
+    def redirect_to_login
+      if !user_signed_in?
+        redirect_to sign_in_path
+      end
+    end
+
+    helper_method :redirect_to_login
 end
