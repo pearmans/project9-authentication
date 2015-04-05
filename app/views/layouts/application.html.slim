@@ -23,8 +23,10 @@ html
           li= link_to 'Cats', cats_path
           li= link_to 'Schedule', tasks_path
           - if user_signed_in?
-            li.greeting Hello = current_user.email
             li.pull-right= link_to "Sign Out", sign_out_path, method: :delete
+            li.greeting.pull-right
+              small
+                = 'Hello, ' + current_user.email
           - else
             li.pull-right= link_to "Sign In", sign_in_path
 
