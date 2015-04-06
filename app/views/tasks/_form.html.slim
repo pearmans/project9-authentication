@@ -3,9 +3,9 @@
 = form_for @task do |f|
   - if @task.errors.any?
     #error_explanation
-      h2 = "#{pluralize(@task.errors.count, "error")} prohibited this task from being saved:"
+      h3 = "#{pluralize(@task.errors.count, "error")} prohibited this task from being saved:"
       ul
-        - @task.errors.full_messages.each do |message|
+        - @task.errors.each do |attr, message|
           li = message
 
   .field.col-md-12.heading
@@ -38,7 +38,7 @@
     = f.label :recurring
     = f.check_box :recurring
   .field.col-md-4
-    = f.label :days
+    = f.label :days, "Date"
     = f.date_field :days
   .actions.col-md-4 = f.submit
   .clearfix

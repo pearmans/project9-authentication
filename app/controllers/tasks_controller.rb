@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
-  before_action :time_update, only: [:update]
+  before_action :time_update, only: [:update, :create]
   
   # GET /tasks
   # GET /tasks.json
